@@ -19,3 +19,4 @@ GitHub Actions will:
 1. Build Docker image
 2. Push to Artifact Registry
 3. Deploy to Cloud Run
+# Trigger rebuild
