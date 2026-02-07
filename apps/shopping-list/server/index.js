@@ -67,6 +67,16 @@ router.delete('/lists/:id', async (req, res) => {
   res.json({ success: true });
 });
 
+// Get items from list
+router.get('/lists/:id/items', async (req, res) => {
+  const data = await readData();
+  const list = data.lists[req.params.id];
+  if (!list) {
+    return res.status(404).json({ error: 'List not found' });
+  }
+  res.json(list.items);
+});
+
 // Add item to list
 router.post('/lists/:id/items', async (req, res) => {
   const { name, category } = req.body;
