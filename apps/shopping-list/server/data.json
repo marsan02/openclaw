@@ -1,0 +1,12 @@
+{
+  "lists": {
+    "default": {
+      "name": "My List",
+      "items": []
+    },
+    "mlcmcbno": {
+      "name": "Test List",
+      "items": []
+    }
+  }
+}

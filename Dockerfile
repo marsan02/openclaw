@@ -27,6 +27,7 @@ COPY registry.json ./
 # Copy app backends
 COPY apps/hello-world/server ./apps/hello-world/server
 COPY apps/mortgage-simulator/server ./apps/mortgage-simulator/server
+COPY apps/shopping-list/server ./apps/shopping-list/server
 
 # Copy built frontend from builder
 COPY --from=builder /app/marketplace/dist ./apps/marketplace/dist
