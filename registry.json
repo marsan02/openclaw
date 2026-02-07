@@ -3,6 +3,16 @@
   "description": "Quick-deploy platform for app ideas",
   "apps": [
     {
+      "id": "mortgage-simulator",
+      "name": "Mortgage Simulator",
+      "description": "Compare mortgages and see how early repayments save you money",
+      "icon": "🏠",
+      "color": "#10B981",
+      "status": "active",
+      "hasApi": true,
+      "createdAt": "2026-02-07"
+    },
+    {
       "id": "hello-world",
       "name": "Hello World",
       "description": "A simple demo app to test the platform",

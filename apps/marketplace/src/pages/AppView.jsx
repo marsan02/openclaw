@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom'
 // Dynamic app components registry
 const appComponents = {
   'hello-world': () => import('../apps/HelloWorld'),
+  'mortgage-simulator': () => import('../apps/MortgageSimulator'),
 }
 
 function AppView() {
