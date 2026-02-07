@@ -1,0 +1,16 @@
+{
+  "name": "Marsan Apps",
+  "description": "Quick-deploy platform for app ideas",
+  "apps": [
+    {
+      "id": "hello-world",
+      "name": "Hello World",
+      "description": "A simple demo app to test the platform",
+      "icon": "👋",
+      "color": "#3B82F6",
+      "status": "active",
+      "hasApi": true,
+      "createdAt": "2026-02-07"
+    }
+  ]
+}
