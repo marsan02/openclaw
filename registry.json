@@ -3,6 +3,16 @@
   "description": "Quick-deploy platform for app ideas",
   "apps": [
     {
+      "id": "shopping-list",
+      "name": "Shopping List",
+      "description": "Manage your grocery lists with categories",
+      "icon": "🛒",
+      "color": "#22C55E",
+      "status": "active",
+      "hasApi": true,
+      "createdAt": "2026-02-07"
+    },
+    {
       "id": "mortgage-simulator",
       "name": "Mortgage Simulator",
       "description": "Compare mortgages and see how early repayments save you money",

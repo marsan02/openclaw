@@ -5,6 +5,7 @@ import { useParams, Link } from 'react-router-dom'
 const appComponents = {
   'hello-world': () => import('../apps/HelloWorld'),
   'mortgage-simulator': () => import('../apps/MortgageSimulator'),
+  'shopping-list': () => import('../apps/ShoppingList'),
 }
 
 function AppView() {
