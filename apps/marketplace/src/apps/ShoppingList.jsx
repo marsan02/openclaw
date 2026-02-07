@@ -198,7 +198,7 @@ export default function ShoppingList() {
             value={newListName}
             onChange={(e) => setNewListName(e.target.value)}
             placeholder="List name..."
-            className="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            className="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-400"
             autoFocus
           />
           <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
@@ -219,12 +219,12 @@ export default function ShoppingList() {
               value={newItem}
               onChange={(e) => setNewItem(e.target.value)}
               placeholder="Add item..."
-              className="flex-1 px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg"
+              className="flex-1 px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-lg bg-white text-gray-900 placeholder-gray-400"
             />
             <select
               value={newCategory}
               onChange={(e) => setNewCategory(e.target.value)}
-              className="px-3 py-2 border rounded-lg bg-white"
+              className="px-3 py-2 border rounded-lg bg-white text-gray-900"
             >
               {CATEGORIES.map(cat => (
                 <option key={cat} value={cat}>{cat}</option>
