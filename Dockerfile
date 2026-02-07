@@ -1,30 +1,24 @@
 # Build stage for React frontend
 FROM node:20-alpine AS builder
 
-WORKDIR /app
+WORKDIR /app/marketplace
 
-# Copy package files
-COPY package*.json ./
-COPY apps/marketplace/package*.json ./apps/marketplace/
-
-# Install all dependencies (including dev for build)
+# Install frontend dependencies
+COPY apps/marketplace/package*.json ./
 RUN npm install
-RUN cd apps/marketplace && npm install
 
-# Copy source
-COPY . .
-
-# Build the React app
-RUN cd apps/marketplace && npm run build
+# Copy frontend source and build
+COPY apps/marketplace/ ./
+RUN npm run build
 
 # Production stage
 FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy package files and install production deps only
-COPY package*.json ./
-RUN npm install --only=production
+# Copy server package and install
+COPY package.json ./
+RUN npm install --only=production --ignore-scripts
 
 # Copy server code
 COPY server ./server
@@ -34,7 +28,7 @@ COPY registry.json ./
 COPY apps/hello-world/server ./apps/hello-world/server
 
 # Copy built frontend from builder
-COPY --from=builder /app/apps/marketplace/dist ./apps/marketplace/dist
+COPY --from=builder /app/marketplace/dist ./apps/marketplace/dist
 
 ENV PORT=8080
 EXPOSE 8080
