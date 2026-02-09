@@ -398,9 +398,9 @@ export default function TaskManager() {
               </button>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <span className="font-medium truncate">{task.name}</span>
+                  <span className="font-medium truncate text-gray-900">{task.name}</span>
                   {task.recurrence?.type !== 'none' && (
-                    <span title="Recurring" className="text-indigo-500">🔄</span>
+                    <span title="Recurring" className="text-indigo-600">🔄</span>
                   )}
                 </div>
                 <div className="flex flex-wrap gap-2 mt-1">
@@ -445,7 +445,7 @@ export default function TaskManager() {
                     ✓
                   </button>
                   <div className="flex-1 min-w-0">
-                    <span className="line-through text-gray-500 truncate">{task.name}</span>
+                    <span className="line-through text-gray-400 truncate">{task.name}</span>
                   </div>
                   <button
                     onClick={() => deleteTask(task.id)}
