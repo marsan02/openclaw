@@ -1,0 +1,58 @@
+{
+  "tools": [
+    {
+      "name": "get_tasks",
+      "description": "Get all tasks (sorted: unchecked first, then by order). Recurring tasks auto-reset on schedule.",
+      "endpoint": "GET /tasks"
+    },
+    {
+      "name": "get_tags",
+      "description": "Get all unique tags used across tasks",
+      "endpoint": "GET /tags"
+    },
+    {
+      "name": "create_task",
+      "description": "Create a new task with optional tags, due date, and recurrence",
+      "endpoint": "POST /tasks",
+      "parameters": {
+        "name": { "type": "string", "description": "Task name/description" },
+        "tags": { "type": "array", "description": "Array of tag strings", "required": false },
+        "dueDate": { "type": "string", "description": "Due date in ISO format (YYYY-MM-DD)", "required": false },
+        "recurrence": { 
+          "type": "object", 
+          "description": "Recurrence config: {type: 'none'|'daily'|'weekly'|'interval', days?: [0-6], intervalDays?: number}", 
+          "required": false 
+        }
+      }
+    },
+    {
+      "name": "update_task",
+      "description": "Update a task (check/uncheck, rename, change tags, due date, recurrence)",
+      "endpoint": "PATCH /tasks/{taskId}",
+      "parameters": {
+        "taskId": { "type": "string", "description": "Task ID" },
+        "name": { "type": "string", "description": "New task name", "required": false },
+        "checked": { "type": "boolean", "description": "Whether task is completed", "required": false },
+        "tags": { "type": "array", "description": "New tags array", "required": false },
+        "dueDate": { "type": "string", "description": "New due date (ISO format) or null to clear", "required": false },
+        "recurrence": { "type": "object", "description": "New recurrence config", "required": false }
+      }
+    },
+    {
+      "name": "delete_task",
+      "description": "Delete a task",
+      "endpoint": "DELETE /tasks/{taskId}",
+      "parameters": {
+        "taskId": { "type": "string", "description": "Task ID to delete" }
+      }
+    },
+    {
+      "name": "reorder_tasks",
+      "description": "Reorder tasks by providing array of task IDs in desired order",
+      "endpoint": "POST /tasks/reorder",
+      "parameters": {
+        "taskIds": { "type": "array", "description": "Array of task IDs in the desired order" }
+      }
+    }
+  ]
+}

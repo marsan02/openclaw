@@ -1,0 +1,80 @@
+{
+  "tools": [
+    {
+      "name": "get_lists",
+      "description": "Get all shopping lists with item counts",
+      "endpoint": "GET /lists"
+    },
+    {
+      "name": "get_list",
+      "description": "Get a specific shopping list with all items",
+      "endpoint": "GET /lists/{listId}",
+      "parameters": {
+        "listId": { "type": "string", "description": "List ID" }
+      }
+    },
+    {
+      "name": "create_list",
+      "description": "Create a new shopping list",
+      "endpoint": "POST /lists",
+      "parameters": {
+        "name": { "type": "string", "description": "Name for the new list", "required": false }
+      }
+    },
+    {
+      "name": "delete_list",
+      "description": "Delete a shopping list",
+      "endpoint": "DELETE /lists/{listId}",
+      "parameters": {
+        "listId": { "type": "string", "description": "List ID to delete" }
+      }
+    },
+    {
+      "name": "get_items",
+      "description": "Get all items from a shopping list",
+      "endpoint": "GET /lists/{listId}/items",
+      "parameters": {
+        "listId": { "type": "string", "description": "List ID" }
+      }
+    },
+    {
+      "name": "add_item",
+      "description": "Add an item to a shopping list",
+      "endpoint": "POST /lists/{listId}/items",
+      "parameters": {
+        "listId": { "type": "string", "description": "List ID" },
+        "name": { "type": "string", "description": "Item name" },
+        "category": { "type": "string", "description": "Category emoji + name (e.g., '🥛 Dairy')", "required": false }
+      }
+    },
+    {
+      "name": "update_item",
+      "description": "Update an item (check/uncheck, rename, change category)",
+      "endpoint": "PATCH /lists/{listId}/items/{itemId}",
+      "parameters": {
+        "listId": { "type": "string", "description": "List ID" },
+        "itemId": { "type": "string", "description": "Item ID" },
+        "checked": { "type": "boolean", "description": "Whether item is checked off", "required": false },
+        "name": { "type": "string", "description": "New item name", "required": false },
+        "category": { "type": "string", "description": "New category", "required": false }
+      }
+    },
+    {
+      "name": "delete_item",
+      "description": "Delete an item from a shopping list",
+      "endpoint": "DELETE /lists/{listId}/items/{itemId}",
+      "parameters": {
+        "listId": { "type": "string", "description": "List ID" },
+        "itemId": { "type": "string", "description": "Item ID to delete" }
+      }
+    },
+    {
+      "name": "clear_checked",
+      "description": "Remove all checked items from a list",
+      "endpoint": "POST /lists/{listId}/clear-checked",
+      "parameters": {
+        "listId": { "type": "string", "description": "List ID" }
+      }
+    }
+  ]
+}
