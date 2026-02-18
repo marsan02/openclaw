@@ -7,6 +7,7 @@ const appComponents = {
   'mortgage-simulator': () => import('../apps/MortgageSimulator'),
   'shopping-list': () => import('../apps/ShoppingList'),
   'task-manager': () => import('../apps/TaskManager'),
+  'planning-poker': () => import('../apps/PlanningPoker'),
 }
 
 function AppView() {

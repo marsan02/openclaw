@@ -3,6 +3,16 @@
   "description": "Quick-deploy platform for app ideas",
   "apps": [
     {
+      "id": "planning-poker",
+      "name": "Planning Poker",
+      "description": "Real-time estimation for agile teams with Fibonacci voting",
+      "icon": "🃏",
+      "color": "#6366F1",
+      "status": "active",
+      "hasApi": false,
+      "createdAt": "2026-02-18"
+    },
+    {
       "id": "task-manager",
       "name": "Task Manager",
       "description": "Manage one-off and recurring tasks with drag-and-drop ordering",
